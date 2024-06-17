@@ -10,7 +10,7 @@ async def http_call_async():
     r = await client.get("https://httpbin.org")
     print(r)
 
-async def async_view(request):
-  loop = asyncio.get_event_loop()
-  loop.create_task(http_call_async())
-  return HttpResponse("Non-blocking HTTP request")
+async def async_view(resquest):
+    loop = asyncio.get_event_loop()
+    loop.create_task(http_call_async())
+    return HttpResponse("Requisição funcionando!")
